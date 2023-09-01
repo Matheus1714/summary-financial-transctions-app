@@ -1,13 +1,7 @@
 import styled from 'styled-components'
+import * as DefaultContianerStyle from '../../components/DefaultContiner/styled'
 
-export const Contianer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  height: 100vh;
-
+export const Contianer = styled(DefaultContianerStyle.Contianer)`
   gap: 1rem;
 `
 

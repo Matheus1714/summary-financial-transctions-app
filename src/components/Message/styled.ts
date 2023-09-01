@@ -1,15 +1,12 @@
 import styled from 'styled-components'
+import * as DefaultContianerStyle from '../DefaultContiner/styled'
 
-export const Container = styled.div`
+export const Container = styled(DefaultContianerStyle.Contianer)`
   background: ${(props) => props.theme.white};
 
-  height: 100vh;
-  width: 100%;
   position: relative;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
 `
 
 export const Text = styled.div`
@@ -19,21 +16,14 @@ export const Text = styled.div`
   font-weight: bold;
 `
 
-export const Circle = styled.div`
+export const Circle = styled(DefaultContianerStyle.Center)`
   width: 37.5rem;
   height: 37.5rem;
 
   position: absolute;
-  top: calc(50% - 18.75rem);
-  left: calc(50% - 18.75rem);
 
   background: ${(props) => props.theme.purpleNormal};
-
   border-radius: 9999px;
 
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
 `

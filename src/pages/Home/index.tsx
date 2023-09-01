@@ -1,9 +1,16 @@
 import * as S from './styled'
+import hyperplaneLogoDark from '../../assets/hyperplane-logo-dark.svg'
+import { Emphasis } from '../../components/Emphasis'
 
-export function Home(){
+export function Home() {
   return (
     <S.Container>
-      <h1>Home Page</h1>
+      <Emphasis text={'2022'} />
+      <S.Title>Finantial Summary</S.Title>
+      <S.Logo>
+        <img src={hyperplaneLogoDark} alt="" />
+        <p>Hyperplane</p>
+      </S.Logo>
     </S.Container>
   )
 }
