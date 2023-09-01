@@ -11,8 +11,10 @@ export const GlobalStyle = createGlobalStyle`
     box-shadow: 0 0 0 2px ${(props) => props.theme.white};
   }
   body{
-    background: ${(props) => props.theme.background};
-    color: ${(props) => props.theme.baseText};
+    background: ${(props) => props.theme.purpleNormal};
+    
+    color: ${(props) => props.theme.white};
+    font-family: 'Poppins', sans-serif;
     
     -webkit-font-smoothing: antialiased;
   }
