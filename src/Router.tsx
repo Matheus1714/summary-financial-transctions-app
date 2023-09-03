@@ -7,21 +7,26 @@ import { NotFound } from './pages/NotFound'
 import { SpendingCategory } from './pages/SpendingCategory'
 import { SpendingMonth } from './pages/SpendingMonth'
 import { Transactions } from './pages/Transactions'
+import { TransactionsMap } from './pages/TransactionsMap'
 
 export function Router() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/loading" element={<Loading />} />
-      <Route path="/introduction" element={<Introduction />} />
-      <Route path="/transactions" element={<Transactions />} />
-      <Route path="/goodbye" element={<Goodbye />} />
+      <Route index element={<Home />} />
+      <Route path="loading" element={<Loading />} />
+      <Route path="introduction" element={<Introduction />} />
 
-      <Route path="/spending">
-        <Route index path="month" element={<SpendingMonth />} />
-        <Route path="category" element={<SpendingCategory />} />
+      <Route path="transactions">
+        <Route index element={<Transactions />} />
+        <Route path="maps" element={<TransactionsMap />} />
       </Route>
 
+      <Route path="spending">
+        <Route index element={<SpendingCategory />} />
+        <Route path="month" element={<SpendingMonth />} />
+      </Route>
+
+      <Route path="goodbye" element={<Goodbye />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   )
