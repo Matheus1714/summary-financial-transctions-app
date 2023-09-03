@@ -5,7 +5,7 @@ import { Emphasis } from '../../components/Emphasis'
 export function Home() {
   return (
     <S.Container>
-      <Emphasis text={'2022'} />
+      <Emphasis text={'2022'} textSize={6} />
       <S.Title>Finantial Summary</S.Title>
       <S.Logo>
         <img src={hyperplaneLogoDark} alt="" />
