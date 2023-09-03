@@ -9,6 +9,6 @@ export const Container = styled.div<ContainerProps>`
     font-size: ${(props) => `${props.$textize}rem`};
     color: ${(props) => props.theme.purpleNormal};
 
-    margin: 3rem 0 0;
+    /* margin: 3rem 0 0; */
   }
 `
