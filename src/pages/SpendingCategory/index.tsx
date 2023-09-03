@@ -9,20 +9,43 @@ import {
   Money,
 } from '@phosphor-icons/react'
 import { Card } from './Card'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { CardAlert } from '../../components/CardAlert'
+import { NextPage } from '../../components/NextPage'
+import { Message } from '../../components/Message'
 
 export function SpendingCategory() {
   const [showCardAlert, setShowCardAlert] = useState(false)
+  const [showNextPage, setshowNextPage] = useState(false)
+  const [showMessage, setShowMessage] = useState(true)
 
-  const handleCardAlertClick = () => {
-    if (!showCardAlert) {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowMessage(false)
+    }, 2000)
+    return () => clearTimeout(timer)
+  }, [])
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
       setShowCardAlert(true)
-    }
+    }, 3000)
+    return () => clearTimeout(timer)
+  }, [])
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setshowNextPage(true)
+    }, 5000)
+    return () => clearTimeout(timer)
+  }, [])
+
+  if (showMessage) {
+    return <Message text={"First let's look at spending by category"} />
   }
 
   return (
-    <S.Container onClick={handleCardAlertClick}>
+    <S.Container>
       <Header title="Spending by Category" />
       <S.CardsCategory>
         <Card icon={PersonSimpleRun} percent={0.7} level={0} />
@@ -43,6 +66,7 @@ export function SpendingCategory() {
           <Card icon={PersonSimpleRun} percent={0.7} level={0} />
         </CardAlert>
       )}
+      {showNextPage && <NextPage to="/spending/month" />}
     </S.Container>
   )
 }

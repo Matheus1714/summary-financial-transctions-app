@@ -1,6 +1,6 @@
 import { PersonSimpleWalk } from '@phosphor-icons/react'
 import { CardAlert } from '../../components/CardAlert'
-import { Loading } from '../Loading'
+import { Loading } from '../../components/Loading'
 import * as S from './styled'
 import {
   useJsApiLoader,
@@ -8,37 +8,12 @@ import {
   Circle,
   Marker,
 } from '@react-google-maps/api'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { NextPage } from '../../components/NextPage'
+import { Message } from '../../components/Message'
 
 const center = { lat: 48.8584, lng: 2.2445 }
 
-// interface LocationType {
-//   lat: number
-//   lng: number
-// }
-
-// const generateRandomLocations = () => {
-//   const locations: LocationType[] = []
-
-//   for (let region = 1; region <= 10; region++) {
-//     const numLocations = Math.floor(Math.random() * 100)
-
-//     for (let i = 0; i < numLocations; i++) {
-//       const location: LocationType = {
-//         lat: Math.random() * (90 - -90) - 90,
-//         lng: Math.random() * (180 - -180) - 180,
-//       }
-
-//       locations.push(location)
-//     }
-//   }
-
-//   return locations
-// }
-
-// const center = { lat: 48.8584, lng: 2.2445 }
-
-// Define the circular regions
 const regions = [
   { center: { lat: 48.8584, lng: 2.2445 }, radius: 3000 },
   { center: { lat: 48.8697, lng: 2.3075 }, radius: 3000 },
@@ -47,23 +22,50 @@ const regions = [
 
 export function TransactionsMap() {
   const [showCardAlert, setShowCardAlert] = useState(false)
-
-  const handleCardAlertClick = () => {
-    if (!showCardAlert) {
-      setShowCardAlert(true)
-    }
-  }
+  const [showNextPage, setshowNextPage] = useState(false)
+  const [showMessage, setShowMessage] = useState(true)
 
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
   })
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowMessage(false)
+    }, 2000)
+    return () => clearTimeout(timer)
+  }, [])
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowCardAlert(true)
+    }, 3000)
+    return () => clearTimeout(timer)
+  }, [])
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setshowNextPage(true)
+    }, 3000)
+    return () => clearTimeout(timer)
+  }, [])
+
   if (!isLoaded) {
     return <Loading />
   }
 
+  if (showMessage) {
+    return (
+      <Message
+        text={
+          'I will also show the places you visited when you made a transaction'
+        }
+      />
+    )
+  }
+
   return (
-    <S.Container onClick={handleCardAlertClick}>
+    <S.Container>
       <GoogleMap
         center={center}
         zoom={12}
@@ -101,6 +103,7 @@ export function TransactionsMap() {
           </S.MessageAlert>
         </CardAlert>
       )}
+      {showNextPage && <NextPage to="/finish" />}
     </S.Container>
   )
 }
