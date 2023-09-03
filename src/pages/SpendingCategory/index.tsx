@@ -10,6 +10,7 @@ import {
 } from '@phosphor-icons/react'
 import { Card } from './Card'
 import { useState } from 'react'
+import { CardAlert } from '../../components/CardAlert'
 
 export function SpendingCategory() {
   const [showCardAlert, setShowCardAlert] = useState(false)
@@ -31,7 +32,7 @@ export function SpendingCategory() {
         <Card icon={AirplaneTilt} percent={0.01} level={4} />
       </S.CardsCategory>
       {showCardAlert && (
-        <S.CardAlert>
+        <CardAlert>
           <Money size={64} />
 
           <S.MessageAlert>
@@ -40,7 +41,7 @@ export function SpendingCategory() {
           </S.MessageAlert>
 
           <Card icon={PersonSimpleRun} percent={0.7} level={0} />
-        </S.CardAlert>
+        </CardAlert>
       )}
     </S.Container>
   )

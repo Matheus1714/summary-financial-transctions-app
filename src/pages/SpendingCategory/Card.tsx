@@ -1,4 +1,4 @@
-import * as S from '../SpendingMonth/styled'
+import * as S from './styled'
 import { ElementType } from 'react'
 
 interface CardProps {
