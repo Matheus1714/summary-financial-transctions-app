@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import * as DefaultContainerStyle from '../../components/DefaultContiner/styled'
+import * as DefaultContainerStyle from '../DefaultContiner/styled'
 
 export const Container = styled(DefaultContainerStyle.Container)`
   gap: 1rem;
