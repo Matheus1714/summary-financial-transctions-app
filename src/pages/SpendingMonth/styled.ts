@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { MAX_HEIGHT_BALLS } from './Chart'
 
 export const Container = styled.div`
@@ -60,6 +60,23 @@ interface BallProps {
   $visible: string
 }
 
+interface appearProps extends BallProps {}
+
+const appear = keyframes<appearProps>`
+  0%{
+    opacity:0;
+    transform: translateX(-10px);
+  }
+  50%{
+    ${(props) => (props.$visible === 'true' ? 0.5 : 0)};
+    transform: translateX(10px);
+  }
+  100%{
+    ${(props) => (props.$visible === 'true' ? 1 : 0)};
+    transform: translateX(0);
+  }
+`
+
 export const Ball = styled.div<BallProps>`
   justify-self: center;
   justify-self: center;
@@ -72,6 +89,8 @@ export const Ball = styled.div<BallProps>`
   border-radius: 50%;
 
   opacity: ${(props) => (props.$visible === 'true' ? 1 : 0)};
+
+  animation: ${appear} 1s ease-in-out forwards;
 `
 
 export const MessageAlert = styled.div`
