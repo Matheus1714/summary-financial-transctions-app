@@ -45,10 +45,10 @@ The main dependencies used are:
 
 ## Features
 
-- [ ] Create Screens
+- [X] Create Screens
 - [ ] Animation Between Screens
-- [ ] Icon Animation
-- [ ] Google Maps Integration
+- [X] Icon Animation
+- [X] Google Maps Integration
 - [ ] Back-end Integration
 
 ## Run Project
