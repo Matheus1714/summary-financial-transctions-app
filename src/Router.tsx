@@ -1,7 +1,11 @@
 import { Route, Routes } from 'react-router-dom'
+import { Goodbye } from './pages/GoodBye'
 import { Home } from './pages/Home'
-import { Loading } from './pages/Loading'
 import { Introduction } from './pages/Introduction'
+import { Loading } from './pages/Loading'
+import { NotFound } from './pages/NotFound'
+import { SpendingCategory } from './pages/SpendingCategory'
+import { SpendingMonth } from './pages/SpendingMonth'
 import { Transactions } from './pages/Transactions'
 
 export function Router() {
@@ -11,6 +15,14 @@ export function Router() {
       <Route path="/loading" element={<Loading />} />
       <Route path="/introduction" element={<Introduction />} />
       <Route path="/transactions" element={<Transactions />} />
+      <Route path="/goodbye" element={<Goodbye />} />
+
+      <Route path="/spending" element={<Goodbye />}>
+        <Route index element={<SpendingMonth />} />
+        <Route path="category" element={<SpendingCategory />} />
+      </Route>
+
+      <Route path="*" element={<NotFound />} />
     </Routes>
   )
 }

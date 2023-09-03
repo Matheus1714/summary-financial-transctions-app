@@ -6,5 +6,5 @@ interface DefaultContainerProps {
 }
 
 export function DefaultContainer({ children }: DefaultContainerProps) {
-  return <S.Contianer>{children}</S.Contianer>
+  return <S.Container>{children}</S.Container>
 }

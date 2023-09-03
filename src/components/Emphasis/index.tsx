@@ -6,9 +6,9 @@ interface EmphasisProps {
 
 export function Emphasis({ text }: EmphasisProps) {
   return (
-    <S.Contianer>
+    <S.Container>
       <h1>{text}</h1>
       <div />
-    </S.Contianer>
+    </S.Container>
   )
 }

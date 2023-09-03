@@ -1,7 +1,7 @@
-import styled from 'styled-components'
-import * as DefaultContianerStyle from '../DefaultContiner/styled'
+import styled, { Keyframe } from 'styled-components'
+import * as DefaultContainerStyle from '../DefaultContiner/styled'
 
-export const Container = styled(DefaultContianerStyle.Contianer)`
+export const Container = styled(DefaultContainerStyle.Container)`
   background: ${(props) => props.theme.white};
 
   position: relative;
@@ -16,7 +16,7 @@ export const Text = styled.div`
   font-weight: bold;
 `
 
-export const Circle = styled(DefaultContianerStyle.Center)`
+export const Circle = styled(DefaultContainerStyle.Center)`
   width: 37.5rem;
   height: 37.5rem;
 
@@ -27,3 +27,15 @@ export const Circle = styled(DefaultContianerStyle.Center)`
 
   flex-direction: column;
 `
+
+type AnimationKeyframesType = Keyframe
+
+export const createIconContainer = (
+  animationKeyframes: AnimationKeyframesType,
+) => {
+  const IconContainer = styled.div`
+    animation: ${animationKeyframes} 1s infinite;
+  `
+
+  return IconContainer
+}

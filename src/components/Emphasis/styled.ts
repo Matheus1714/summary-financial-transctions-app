@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Contianer = styled.div`
+export const Container = styled.div`
   h1 {
     font-size: 6rem;
     color: ${(props) => props.theme.purpleNormal};

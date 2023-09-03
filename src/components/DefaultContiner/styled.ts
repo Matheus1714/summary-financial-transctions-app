@@ -7,6 +7,6 @@ export const Center = styled.div`
   align-items: center;
 `
 
-export const Contianer = styled(Center)`
+export const Container = styled(Center)`
   height: 100vh;
 `

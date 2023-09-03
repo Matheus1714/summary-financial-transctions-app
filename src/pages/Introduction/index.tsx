@@ -10,8 +10,8 @@ export function Introduction() {
   }
 
   return (
-    <S.Contianer onClick={handleClick}>
+    <S.Container onClick={handleClick}>
       <Message text={message} />
-    </S.Contianer>
+    </S.Container>
   )
 }

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import * as DefaultContianerStyle from '../../components/DefaultContiner/styled'
+import * as DefaultContainerStyle from '../../components/DefaultContiner/styled'
 
-export const Container = styled(DefaultContianerStyle.Contianer)`
+export const Container = styled(DefaultContainerStyle.Container)`
   background: ${(props) => props.theme.white};
 
   max-width: 24rem;
@@ -37,7 +37,7 @@ export const Title = styled.h1`
   text-align: center;
 `
 
-export const Logo = styled(DefaultContianerStyle.Center)`
+export const Logo = styled(DefaultContainerStyle.Center)`
   gap: 1rem;
 
   p {

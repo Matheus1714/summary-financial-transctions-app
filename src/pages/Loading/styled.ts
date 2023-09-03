@@ -1,10 +1,10 @@
 import styled from 'styled-components'
-import * as DefaultContianerStyle from '../../components/DefaultContiner/styled'
+import * as DefaultContainerStyle from '../../components/DefaultContiner/styled'
 
-export const Contianer = styled(DefaultContianerStyle.Contianer)`
+export const Container = styled(DefaultContainerStyle.Container)`
   gap: 1rem;
 `
 
-export const LoaderContianer = styled.div`
+export const LoaderContainer = styled.div`
   position: absolute;
 `

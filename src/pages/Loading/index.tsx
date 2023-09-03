@@ -5,17 +5,17 @@ import { LoadingDots } from './LoadingDots'
 
 export function Loading() {
   return (
-    <S.Contianer>
+    <S.Container>
       <img src={hyperplaneLogoLight} alt="hyperplane logo on loading page" />
-      <S.LoaderContianer>
+      <S.LoaderContainer>
         <RingLoader
           color="#fff"
           speedMultiplier={0.5}
           className="loader"
           size={300}
         />
-      </S.LoaderContianer>
+      </S.LoaderContainer>
       <LoadingDots />
-    </S.Contianer>
+    </S.Container>
   )
 }
