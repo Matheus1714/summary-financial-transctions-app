@@ -13,20 +13,7 @@ export const defaultTheme = {
   successLight: '#4E995E',
   success: '#2F723D',
 
-  pink: '#DB5BBF',
-  pinkDark: '#251622',
-
-  orange: '#E07B67',
-  orangeDark: '#261A17',
-
-  yellow: '#BB9F3A',
-  yellowDark: '#211E12',
-
-  green: '#8CAD51',
-  greenDark: '#1C2015',
-
-  blue: '#7B94CB',
-  blueDark: '#1A1D23',
+  levels: ['#DB5BBF', '#E07B67', '#BB9F3A', '#8CAD51', '#7B94CB'],
 
   gray100: '#FBF9FE',
   gray200: '#AFABB6',
