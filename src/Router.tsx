@@ -17,8 +17,8 @@ export function Router() {
       <Route path="/transactions" element={<Transactions />} />
       <Route path="/goodbye" element={<Goodbye />} />
 
-      <Route path="/spending" element={<Goodbye />}>
-        <Route index element={<SpendingMonth />} />
+      <Route path="/spending">
+        <Route index path="month" element={<SpendingMonth />} />
         <Route path="category" element={<SpendingCategory />} />
       </Route>
 
