@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { MAX_HEIGHT_BALLS } from './Chart'
 
 export const Container = styled.div`
   height: 100vh;
@@ -13,16 +14,75 @@ export const Container = styled.div`
   position: relative;
 `
 
-export const ChartTransactionMonth = styled.main``
+export const ChartContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr repeat(${MAX_HEIGHT_BALLS}, 1fr);
+  grid-row-gap: 0.25rem;
+  grid-template-areas:
+    'ylabel . . . . . . . . . . . .'
+    'ylabel . . . . . . . . . . . .'
+    'ylabel . . . . . . . . . . . .'
+    'ylabel . . . . . . . . . . . .'
+    'ylabel . . . . . . . . . . . .'
+    'ylabel . . . . . . . . . . . .'
+    'ylabel . . . . . . . . . . . .'
+    'ylabel . . . . . . . . . . . .'
+    'ylabel . . . . . . . . . . . .'
+    'ylabel . . . . . . . . . . . .'
+    'ylabel . . . . . . . . . . . .';
+`
 
-export const Card = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+export const YLabel = styled.div`
+  grid-area: ylabel;
+  justify-self: center;
+  align-self: center;
 
-  background: ${(props) => props.theme.white};
+  color: ${(props) => props.theme.black};
 
-  min-width: 15rem;
+  p {
+    direction: rtl;
+    writing-mode: vertical-lr;
+  }
+`
 
-  padding: 1rem;
+export const XLabel = styled.div`
+  grid: 1;
+  justify-self: center;
+  align-self: center;
+
+  p {
+    writing-mode: vertical-lr;
+    color: ${(props) => props.theme.black};
+  }
+`
+
+interface BallProps {
+  $visible: string
+}
+
+export const Ball = styled.div<BallProps>`
+  justify-self: center;
+  justify-self: center;
+  align-self: center;
+  grid: 1;
+
+  width: 1rem;
+  height: 1rem;
+  background: ${(props) => props.theme.purpleNormal};
+  border-radius: 50%;
+
+  opacity: ${(props) => (props.$visible === 'true' ? 1 : 0)};
+`
+
+export const MessageAlert = styled.div`
+  text-align: center;
+  margin-bottom: 1rem;
+  p {
+    font-size: 1rem;
+  }
+  span {
+    font-size: 1.5rem;
+    color: ${(props) => props.theme.levels[0]};
+    font-weight: bold;
+  }
 `
