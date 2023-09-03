@@ -1,4 +1,4 @@
-import styled, { Keyframe } from 'styled-components'
+import styled from 'styled-components'
 import * as DefaultContainerStyle from '../DefaultContiner/styled'
 
 export const Container = styled(DefaultContainerStyle.Container)`
@@ -28,11 +28,7 @@ export const Circle = styled(DefaultContainerStyle.Center)`
   flex-direction: column;
 `
 
-type AnimationKeyframesType = Keyframe
-
-export const createIconContainer = (
-  animationKeyframes: AnimationKeyframesType,
-) => {
+export const createIconContainer = (animationKeyframes: any) => {
   const IconContainer = styled.div`
     animation: ${animationKeyframes} 1s infinite;
   `
