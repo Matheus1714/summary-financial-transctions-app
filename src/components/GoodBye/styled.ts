@@ -1,4 +1,4 @@
-import { createIconContainer } from './../../components/Message/styled'
+import { createIconContainer } from '../Message/styled'
 import styled, { keyframes } from 'styled-components'
 
 export const Container = styled.div``

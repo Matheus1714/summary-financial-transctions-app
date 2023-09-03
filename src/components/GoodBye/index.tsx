@@ -1,5 +1,5 @@
 import { HandWaving } from '@phosphor-icons/react'
-import { Message } from '../../components/Message'
+import { Message } from '../Message'
 import * as S from './styled'
 
 export function Goodbye() {
