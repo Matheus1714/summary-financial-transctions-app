@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 interface ContainerProps {
-  $textize: number
+  $textize: string
 }
 
 export const Container = styled.div<ContainerProps>`

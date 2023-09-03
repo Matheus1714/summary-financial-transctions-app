@@ -8,7 +8,7 @@ interface EmphasisProps {
 
 export function Emphasis({ text, textSize }: EmphasisProps) {
   return (
-    <S.Container $textize={textSize}>
+    <S.Container $textize={textSize.toString()}>
       <h1>{text}</h1>
       <Line />
     </S.Container>

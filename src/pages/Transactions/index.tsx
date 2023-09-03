@@ -7,7 +7,7 @@ export function Transactions() {
     <S.Container>
       <ExplositonRaysIcon />
       <p>You made</p>
-      <Emphasis text="123729" />
+      <Emphasis text="123729" textSize={6} />
     </S.Container>
   )
 }
