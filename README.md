@@ -11,8 +11,6 @@ This is the design solution for the Hyperplane selection process interview.
 
 This project aims to be a web application in which the user can visualize his banking activity during the year in a format similar to [Spotify Wrapped](https://youtu.be/Ca1etgVvyjg) or [Strava Year](https://youtu.be/R52KM9JZdbc) in Sport.
 
-The application demo can be found at the [Application Demo](https://summary-financial-transctions-app.vercel.app/)
-
 ## Table of Content
 <!--ts-->
    * [About](#about)
@@ -32,6 +30,12 @@ For the design of this project, a Figma was initially created for UI/UX developm
 The design can be found in the [Figma Design Project](https://www.figma.com/file/5qSDl6jYTLiAniQtb7mL0h/HyperPlane-%E2%80%A2-Transaction-Rewind-Interview-Project?type=design&node-id=2%3A12&mode=design&t=15nA0NymTvx9eTG7-1).
 
 ![animation-figma](.github/animation-figma.gif)
+
+## Application DEMO
+
+The application demo can be found at the [Application Demo](https://summary-financial-transctions-app.vercel.app/)
+
+
 
 ## Technologies
 
