@@ -13,14 +13,14 @@ This project aims to be a web application in which the user can visualize his ba
 
 ## Table of Content 📜
 <!--ts-->
-   * [About](#about)
-   * [Table of Content](#table-of-content)
-   * [Design](#design)
-   * [Application DEMO](#application-demo)
-   * [Technologies](#technologies)
-   * [Features](#features)
-   * [Run Project](#run-project)
-   * [License](#license)
+   * [About](#about-ℹ️)
+   * [Table of Content](#table-of-content-📜)
+   * [Design](#design-🎨)
+   * [Application DEMO](#application-demo-🚀)
+   * [Technologies](#technologies-⚙️)
+   * [Features](#features-🚀)
+   * [Run Project](#run-project-🏃)
+   * [License](#license-📝)
 <!--te-->
 
 
