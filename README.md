@@ -16,6 +16,7 @@ This project aims to be a web application in which the user can visualize his ba
    * [About](#about)
    * [Table of Content](#table-of-content)
    * [Design](#design)
+   * [Application DEMO](#application-demo)
    * [Technologies](#technologies)
    * [Features](#features)
    * [Run Project](#run-project)
