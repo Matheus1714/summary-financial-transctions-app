@@ -35,7 +35,7 @@ The design can be found in the [Figma Design Project](https://www.figma.com/file
 
 The application demo can be found at the [Application Demo](https://summary-financial-transctions-app.vercel.app/)
 
-
+![application-demo](.github/animation-demo.gif)
 
 ## Technologies
 
