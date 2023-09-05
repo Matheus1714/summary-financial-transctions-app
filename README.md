@@ -88,7 +88,14 @@ The main dependencies used are:
 
 ## Run Project 🏃
 
-Before running the project, install the dependencies:
+Before running the project, viset the repositories:
+
+* [summary-financial-transctions-api](https://github.com/Matheus1714/summary-financial-transctions-api)
+* [financial-data-storage](https://github.com/Matheus1714/financial-data-storage)
+
+Configure local or remote environments according to the documentation.
+
+With the environments configured, install the dependencies:
 
 ```shell
 npm i
