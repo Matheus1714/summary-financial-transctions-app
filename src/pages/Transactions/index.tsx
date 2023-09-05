@@ -4,23 +4,36 @@ import { ExplositonRaysIcon } from './ExplosionRays'
 import * as S from './styled'
 import { NextPage } from '../../components/NextPage'
 import { Message } from '../../components/Message'
+import { getTransactionsQuantityInYear } from '../../services/api'
 
 export function Transactions() {
-  const [showNextPage, setshowNextPage] = useState(false)
+  const [showNextPage, setShowNextPage] = useState(false)
   const [showMessage, setShowMessage] = useState(true)
+  const [transactionsQuantityInYear, setTransactionsQuantityInYear] =
+    useState(0)
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    const timerMessage = setTimeout(() => {
       setShowMessage(false)
     }, 2000)
-    return () => clearTimeout(timer)
-  }, [])
+
+    const timerNextPage = setTimeout(() => {
+      setShowNextPage(true)
+    }, 3000)
+
+    return () => {
+      clearTimeout(timerMessage)
+      clearTimeout(timerNextPage)
+    }
+  }, [setShowMessage, setShowNextPage])
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setshowNextPage(true)
-    }, 3000)
-    return () => clearTimeout(timer)
+    getTransactionsQuantityInYear(
+      '2022',
+      'a2368661-7b18-4dee-ae58-64bc6fa2ceb6',
+    ).then((quantity) => {
+      setTransactionsQuantityInYear(quantity)
+    })
   }, [])
 
   if (showMessage) {
@@ -34,7 +47,7 @@ export function Transactions() {
       <S.Container>
         <ExplositonRaysIcon />
         <p>You made</p>
-        <Emphasis text="123729" textSize={6} />
+        <Emphasis text={transactionsQuantityInYear.toString()} textSize={6} />
         <p>transactions in 2022</p>
       </S.Container>
       {showNextPage && <NextPage to="/transactions/maps" />}

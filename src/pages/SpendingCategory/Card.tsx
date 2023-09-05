@@ -8,17 +8,20 @@ interface CardProps {
 }
 
 export function Card({ icon: Icon, percent, level = 0 }: CardProps) {
-  const _progress = String(100 * percent)
+  const percentDecimal = Math.floor(100 * percent)
   return (
     <S.Card>
       <S.CategoryIcon $level={level.toString()}>
         <Icon size={32} />
       </S.CategoryIcon>
       <S.FullBar $level={level.toString()}>
-        <S.ProgressBar $percent={_progress} $level={level.toString()} />
+        <S.ProgressBar
+          $percent={percentDecimal.toString()}
+          $level={level.toString()}
+        />
       </S.FullBar>
       <S.ProgressText $level={level.toString()}>
-        <p>{_progress}%</p>
+        <p>{percentDecimal}%</p>
       </S.ProgressText>
     </S.Card>
   )

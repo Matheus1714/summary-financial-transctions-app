@@ -17,12 +17,9 @@ export function Router() {
 
       <Route path="transactions">
         <Route index element={<Transactions />} />
-        <Route path="maps" element={<TransactionsMap />} />
-      </Route>
-
-      <Route path="spending">
-        <Route index element={<SpendingCategory />} />
+        <Route path="category" element={<SpendingCategory />} />
         <Route path="month" element={<SpendingMonth />} />
+        <Route path="maps" element={<TransactionsMap />} />
       </Route>
 
       <Route path="*" element={<NotFound />} />

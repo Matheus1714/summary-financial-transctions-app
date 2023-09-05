@@ -1,5 +1,6 @@
 import styled, { keyframes } from 'styled-components'
-import { MAX_HEIGHT_BALLS } from './Chart'
+
+export const MAX_HEIGHT_BALLS = 10
 
 export const Container = styled.div`
   height: 100vh;

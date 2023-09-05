@@ -3,8 +3,12 @@ import hyperplaneLogoDark from '../../assets/hyperplane-logo-dark.svg'
 import { Emphasis } from '../../components/Emphasis'
 import { useEffect, useState } from 'react'
 import { NextPage } from '../../components/NextPage'
+import { useLocation } from 'react-router-dom'
 
 export function Home() {
+  const location = useLocation()
+  const { year, accountId } = location.state
+
   const [showNextPage, setshowNextPage] = useState(false)
 
   useEffect(() => {
@@ -17,13 +21,15 @@ export function Home() {
 
   return (
     <S.Container>
-      <Emphasis text={'2022'} textSize={6} />
+      <Emphasis text={year.toString()} textSize={6} />
       <S.Title>Finantial Summary</S.Title>
       <S.Logo>
         <img src={hyperplaneLogoDark} alt="" />
         <p>Hyperplane</p>
       </S.Logo>
-      {showNextPage && <NextPage to="/spending" />}
+      {showNextPage && (
+        <NextPage to="/transactions/category" state={{ year, accountId }} />
+      )}
     </S.Container>
   )
 }

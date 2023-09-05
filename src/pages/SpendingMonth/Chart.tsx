@@ -2,25 +2,29 @@ import * as S from './styled'
 
 export const MAX_HEIGHT_BALLS = 10
 
-export function Chart() {
-  const data = [3, 5, 3, 10, 4, 2, 3, 3, 3, 3, 6, 8]
+export const MONTHS = [
+  'Jan',
+  'Feb',
+  'Mar',
+  'Apr',
+  'May',
+  'Jun',
+  'Jul',
+  'Ago',
+  'Sep',
+  'Oct',
+  'Nov',
+  'Dec',
+]
 
+interface ChartProps {
+  data: number[]
+}
+
+export function Chart({ data }: ChartProps) {
   const ballHeights = Array.from({ length: MAX_HEIGHT_BALLS }, (_, i) => i)
 
-  const months = [
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
-    'May',
-    'Jun',
-    'Jul',
-    'Ago',
-    'Sep',
-    'Oct',
-    'Nov',
-    'Dec',
-  ]
+  const months = MONTHS
 
   function BallControl(rowIndex: number, colIndex: number, key: string) {
     const amountOfBalls = data[colIndex]
