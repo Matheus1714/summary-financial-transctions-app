@@ -50,20 +50,31 @@ The main dependencies used are:
 
 ```json
 "dependencies": {
-   "react": "^18.2.0",
-   "react-dom": "^18.2.0"
+  "@phosphor-icons/react": "^2.0.10",
+  "@react-google-maps/api": "^2.19.2",
+  "react": "^18.2.0",
+  "react-dom": "^18.2.0",
+  "react-particles": "^2.12.2",
+  "react-router-dom": "^6.15.0",
+  "react-spinners": "^0.13.8",
+  "styled-components": "^6.0.7",
+  "tsparticles-slim": "^2.12.0",
+  "uuid": "^9.0.0"
 },
 "devDependencies": {
-   "@types/react": "^18.2.15",
-   "@types/react-dom": "^18.2.7",
-   "@typescript-eslint/eslint-plugin": "^6.0.0",
-   "@typescript-eslint/parser": "^6.0.0",
-   "@vitejs/plugin-react": "^4.0.3",
-   "eslint": "^8.45.0",
-   "eslint-plugin-react-hooks": "^4.6.0",
-   "eslint-plugin-react-refresh": "^0.4.3",
-   "typescript": "^5.0.2",
-   "vite": "^4.4.5"
+  "@rocketseat/eslint-config": "^2.1.0",
+  "@tsparticles/slim": "^3.0.0-alpha.0",
+  "@types/react": "^18.2.15",
+  "@types/react-dom": "^18.2.7",
+  "@types/uuid": "^9.0.2",
+  "@typescript-eslint/eslint-plugin": "^6.0.0",
+  "@typescript-eslint/parser": "^6.0.0",
+  "@vitejs/plugin-react": "^4.0.3",
+  "eslint": "^8.45.0",
+  "eslint-plugin-react-hooks": "^4.6.0",
+  "eslint-plugin-react-refresh": "^0.4.3",
+  "typescript": "^5.0.2",
+  "vite": "^4.4.5"
 }
 ```
 
