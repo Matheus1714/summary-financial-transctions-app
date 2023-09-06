@@ -1,16 +1,16 @@
 import { PersonSimpleWalk } from '@phosphor-icons/react'
-import { CardAlert } from '../../components/CardAlert'
-import { Loading } from '../../components/Loading'
-import * as S from './styled'
 import {
-  useJsApiLoader,
-  GoogleMap,
   Circle,
+  GoogleMap,
   Marker,
+  useJsApiLoader,
 } from '@react-google-maps/api'
 import { useEffect, useState } from 'react'
-import { NextPage } from '../../components/NextPage'
+import { CardAlert } from '../../components/CardAlert'
+import { Loading } from '../../components/Loading'
 import { Message } from '../../components/Message'
+import { NextPage } from '../../components/NextPage'
+import * as S from './styled'
 
 const center = { lat: 48.8584, lng: 2.2445 }
 
@@ -30,24 +30,23 @@ export function TransactionsMap() {
   })
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    const timerMessage = setTimeout(() => {
       setShowMessage(false)
     }, 2000)
-    return () => clearTimeout(timer)
-  }, [])
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
+    const timerCardAlert = setTimeout(() => {
       setShowCardAlert(true)
     }, 3000)
-    return () => clearTimeout(timer)
-  }, [])
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
+    const timerNextPage = setTimeout(() => {
       setshowNextPage(true)
     }, 3000)
-    return () => clearTimeout(timer)
+
+    return () => {
+      clearTimeout(timerMessage)
+      clearTimeout(timerCardAlert)
+      clearTimeout(timerNextPage)
+    }
   }, [])
 
   if (!isLoaded) {
