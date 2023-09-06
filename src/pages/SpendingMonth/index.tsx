@@ -47,11 +47,11 @@ export function SpendingMonth() {
   useEffect(() => {
     getTransactionsMonthInYear(year, accountId).then((data) => {
       setTransactionsMonth(data)
-      console.log(data)
     })
   }, [year, accountId])
 
-  const dataChart = transactionsMonth.map((item) => item.percentage) || []
+  const dataChart =
+    transactionsMonth.map((item) => Math.floor(item.percentage * 100)) || []
 
   const IndexmonthTopTransactions = transactionsMonth.reduce(
     (maxIndex, currentTransaction, currentIndex, arr) =>

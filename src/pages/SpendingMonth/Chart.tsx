@@ -26,6 +26,8 @@ export function Chart({ data }: ChartProps) {
 
   const months = MONTHS
 
+  console.log(data)
+
   function BallControl(rowIndex: number, colIndex: number, key: string) {
     const amountOfBalls = data[colIndex]
     const ballsHeight = MAX_HEIGHT_BALLS - rowIndex - 1
