@@ -5,8 +5,12 @@ import * as S from './styled'
 import { NextPage } from '../../components/NextPage'
 import { Message } from '../../components/Message'
 import { getTransactionsQuantityInYear } from '../../services/api'
+import { useLocation } from 'react-router-dom'
 
 export function Transactions() {
+  const location = useLocation()
+  const { year, accountId } = location.state
+
   const [showNextPage, setShowNextPage] = useState(false)
   const [showMessage, setShowMessage] = useState(true)
   const [transactionsQuantityInYear, setTransactionsQuantityInYear] =
@@ -28,13 +32,10 @@ export function Transactions() {
   }, [setShowMessage, setShowNextPage])
 
   useEffect(() => {
-    getTransactionsQuantityInYear(
-      '2022',
-      'a2368661-7b18-4dee-ae58-64bc6fa2ceb6',
-    ).then((quantity) => {
+    getTransactionsQuantityInYear(year, accountId).then((quantity) => {
       setTransactionsQuantityInYear(quantity)
     })
-  }, [])
+  }, [year, accountId])
 
   if (showMessage) {
     return (
@@ -50,7 +51,9 @@ export function Transactions() {
         <Emphasis text={transactionsQuantityInYear.toString()} textSize={6} />
         <p>transactions in 2022</p>
       </S.Container>
-      {showNextPage && <NextPage to="/transactions/maps" />}
+      {showNextPage && (
+        <NextPage to="/transactions/maps" state={{ year, accountId }} />
+      )}
     </>
   )
 }

@@ -1,4 +1,12 @@
-import { Money, PersonSimpleRun } from '@phosphor-icons/react'
+import {
+  AirplaneTilt,
+  Money,
+  PersonSimpleRun,
+  House,
+  ForkKnife,
+  GameController,
+  PiggyBank,
+} from '@phosphor-icons/react'
 import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { CardAlert } from '../../components/CardAlert'
@@ -11,6 +19,20 @@ import {
   getTransactionsCategoryInYear,
   TransactionsCategory,
 } from '../../services/api'
+
+interface IconsMapCategory {
+  [key: string]: React.ComponentType<any>
+}
+
+const iconsMap: IconsMapCategory = {
+  Sport: PersonSimpleRun,
+  Travel: AirplaneTilt,
+  House,
+  Food: ForkKnife,
+  Game: GameController,
+  Investiment: PiggyBank,
+  Default: Money,
+}
 
 export function SpendingCategory() {
   const location = useLocation()
@@ -52,6 +74,8 @@ export function SpendingCategory() {
 
   const topCategory = '' || transactionsCategory[0]?.category
   const topPercentage = '' || transactionsCategory[0]?.percentage
+  const topIconCategory =
+    iconsMap.Default || iconsMap[transactionsCategory[0]?.category]
 
   if (showMessage) {
     return <Message text={"First let's look at spending by category"} />
@@ -65,7 +89,7 @@ export function SpendingCategory() {
           return (
             <Card
               key={item.category}
-              icon={PersonSimpleRun}
+              icon={iconsMap[item.category] || iconsMap.Default}
               percent={item.percentage}
               level={index}
             />
@@ -81,7 +105,7 @@ export function SpendingCategory() {
             <span>{topCategory}</span>
           </S.MessageAlert>
 
-          <Card icon={PersonSimpleRun} percent={topPercentage} level={0} />
+          <Card icon={topIconCategory} percent={topPercentage} level={0} />
         </CardAlert>
       )}
       {showNextPage && (

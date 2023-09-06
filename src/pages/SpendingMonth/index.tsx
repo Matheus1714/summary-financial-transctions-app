@@ -47,6 +47,7 @@ export function SpendingMonth() {
   useEffect(() => {
     getTransactionsMonthInYear(year, accountId).then((data) => {
       setTransactionsMonth(data)
+      console.log(data)
     })
   }, [year, accountId])
 
@@ -79,7 +80,7 @@ export function SpendingMonth() {
         </CardAlert>
       )}
       {showNextPage && (
-        <NextPage to="/transactions/maps" state={{ year, accountId }} />
+        <NextPage to="/transactions" state={{ year, accountId }} />
       )}
     </S.Container>
   )
