@@ -84,7 +84,7 @@ The main dependencies used are:
 - [ ] Animation Between Screens
 - [X] Icon Animation
 - [X] Google Maps Integration
-- [ ] Back-end Integration
+- [X] Back-end Integration
 
 ## Run Project 🏃
 
